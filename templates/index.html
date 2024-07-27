@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de número de Parte.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Búsqueda de línea de FA por NP</h1>
+        <form method="post" action="{{ url_for('index') }}">
+            <label for="numero_parte">Número de Parte (Molex PN):</label>
+            <input type="text" id="numero_parte" name="numero_parte" required autofocus>
+            <button type="submit">Buscar</button>
+        </form>
+        <p>{{ mensaje|safe }}</p>
+        {% if filas_resaltadas %}
+        <h2>Resultados en Hoja2:</h2>
+        <table border="1">
+            <tr>
+                <th>Line</th>
+                {% for col in filas_resaltadas[0].index[1:] %}
+                <th>{{ col }}</th>
+                {% endfor %}
+            </tr>
+            {% for fila in filas_resaltadas %}
+            <tr>
+                <td>{{ fila['Line'] }}</td>
+                {% for col in fila.index[1:] %}
+                <td>{{ fila[col]|safe }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Developed by HFM Test Department.</p>
+        <p>
+ 
+            |  <a href="mailto:moises.ramirez1@molex.com">Contacto</a> |
+        </p>
+        <p>Última actualización: {{ ultima_actualizacion }}</p>
+    </footer>
+</body>
+</html>

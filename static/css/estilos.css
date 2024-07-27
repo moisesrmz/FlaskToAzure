@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../img/fondo.jpg');
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
+    background-attachment: fixed; /* Para que la imagen se quede fija al hacer scroll */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.results {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center; /* Centra el texto dentro del footer */
+    padding: 1em; /* Agrega espacio interno */
+
+    position: fixed; /* Opcional: fija el footer en la parte inferior */
+    bottom: 0; /* Opcional: posición fija en la parte inferior */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
